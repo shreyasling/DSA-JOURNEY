@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 vector<int> getSecondOrderElements(int n, vector<int> a) {
     int max = a[0];
     for(int i = 0; i < n; i++) {
@@ -32,3 +34,14 @@ vector<int> getSecondOrderElements(int n, vector<int> a) {
     return result;
 }
 
+int main(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+    }
+    vector<int> res=getSecondOrderElements(n,arr);
+    cout << "Second maximum: " << res[0] << endl;
+    cout << "Second minimum: " << res[1] << endl;
+}
