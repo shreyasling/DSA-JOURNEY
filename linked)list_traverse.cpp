@@ -29,7 +29,11 @@ Node* convertArrToLL(vector<int> &arr){
 int main(){
     vector<int> arr={2,8,4};
     Node* head=convertArrToLL(arr);
-    cout << head->data;
+    Node* temp=head;
+    while(temp){
+        cout << temp->data <<" ";
+        temp=temp->next;
+    }
 
 }
 
