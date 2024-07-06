@@ -27,7 +27,7 @@ Node* convertArrToLL(vector<int> &arr){
     return head;
 }
 int main(){
-    vector<int> arr={2,8,4};
+    vector<int> arr={2,8,4,12};
     Node* head=convertArrToLL(arr);
     Node* temp=head;
     while(temp){
