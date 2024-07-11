@@ -81,6 +81,32 @@ Node* removeK(Node* head,int k){
     return head;
 }
 
+//remove element
+
+Node* removeel(Node* head,int el){
+   if(head==nullptr){
+        return nullptr;
+    }
+    if(head->data==el){
+        Node* temp=head;
+        head=head->next;
+        delete temp;
+        return head;
+    }
+    Node* temp=head;
+    Node* prev=nullptr;
+    while(temp){
+        if(temp->data==el){
+            prev->next=prev->next->next;
+            delete temp;
+            break;
+        }
+        prev=temp;
+        temp=temp->next;
+    }
+    return head;
+}
+
 int main() {
     vector<int> arr = {2,9, 5, 4, 12};
     Node* head = convertArrToLL(arr);
@@ -92,8 +118,10 @@ int main() {
     // Deleting the tail node on the updated list
     // head = deleteTail(head);
 
-    head=removeK(head,2);
+    // head=removeK(head,2);
 
+
+    head=removeel(head,9);
     // Print the updated list
     Node* temp = head;
     while (temp) {
